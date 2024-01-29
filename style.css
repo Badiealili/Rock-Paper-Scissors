@@ -1,0 +1,106 @@
+/* JOSH COMEAU CSS RESET. SOURCE: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  height: 100vh;
+  padding-inline: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: monospace;
+  color: azure;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 3em;
+}
+
+.main {
+  padding-inline: 10em;
+}
+
+.play-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -3em;
+  margin-bottom: 5em;
+}
+
+.play-cards .play-card {
+  color: black;
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+}
+
+.score .score-human{
+  background-color: blue;
+  width: 50%;
+}
+
+.score .score-computer{
+  text-align: right;
+  background-color: red;
+  width: 50%;
+}
+
+footer {
+  text-align: center;
+  padding-block: 1em;
+}
