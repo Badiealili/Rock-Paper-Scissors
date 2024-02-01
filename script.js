@@ -60,7 +60,7 @@ playCards.addEventListener("click", (event) => {
   // Show the result of the game (5 rounds)
   if(numberOfRounds == 5){
     numberOfRounds = 0;
-    alert(`Global Result: ${globalResult}`)
+    alert(`Global Result : ${globalResult}`)
   }
 });
 
