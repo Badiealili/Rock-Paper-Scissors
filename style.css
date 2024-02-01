@@ -29,6 +29,7 @@ button,
 textarea,
 select {
   font: inherit;
+  border: none;
 }
 
 p,
@@ -75,6 +76,7 @@ body {
 }
 
 .play-cards .play-card {
+  cursor: pointer;
   color: black;
   background-color: white;
   height: 150px;
@@ -85,19 +87,34 @@ body {
 }
 
 .score {
+  position: relative;
+  height: 30px;
   display: flex;
   justify-content: space-between;
 }
 
-.score .score-human{
-  background-color: blue;
-  width: 50%;
+.score p {
+  position: absolute;
 }
 
-.score .score-computer{
-  text-align: right;
+.score .human-score p {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.score .computer-score p {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.score .human-score {
+  background-color: blue;
+  flex: 1 1 0;
+}
+
+.score .computer-score {
   background-color: red;
-  width: 50%;
+  flex: 1 1 0;
 }
 
 footer {
