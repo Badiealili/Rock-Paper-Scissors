@@ -1,3 +1,5 @@
+// Game functionality
+
 let choices = ["rock", "paper", "scissors"];
 
 let getComputerChoice = function () {
@@ -26,24 +28,39 @@ let playRound = function (computerChoice, humanChoice) {
   return gameState;
 };
 
-let game = function () {
-  let finalResult = 0;
-  let computerChoice;
-  let humanChoice;
-  for (let i = 0; i < 5; i++) {
-    computerChoice = getComputerChoice();
-    humanChoice = prompt("Choose one move: (rock, paper, scissors)");
-    finalResult += playRound(computerChoice, humanChoice);
-    alert(`Computer chose: ${computerChoice}, Current score: ${finalResult}`);
-  }
+// Global Variables
+let humanChoice;
+let computerChoice;
+let numberOfRounds = 0;
+let globalResult = 0;
+let globalHumanResult = 0;
+let globalComputerResult = 0;
 
-  if (finalResult > 0) {
-    alert("Congrats, you won!!");
-  } else if (finalResult < 0) {
-    alert("Too bad, you loose!");
+// Click event listener and game logic
+
+let playCards = document.querySelector(".play-cards");
+playCards.addEventListener("click", (event) => {
+  if (!event.target.classList.contains("play-card")) {
+    return;
+  }
+  // Play one round
+  humanChoice = event.target.dataset.value;
+  computerChoice = getComputerChoice();
+  roundResult = playRound(computerChoice, humanChoice);
+  if(roundResult == 1){
+    globalHumanResult++
   } else {
-    alert("It's a tie!");
+    globalComputerResult -= roundResult;
   }
-};
+  globalResult += roundResult;
+  numberOfRounds++
+  alert(
+    `You chose ${humanChoice}, Computer chose ${computerChoice}, Result: ${roundResult}`
+  );
+  // Show the result of the game (5 rounds)
+  if(numberOfRounds == 5){
+    numberOfRounds = 0;
+    alert(`Global Result: ${globalResult}`)
+  }
+});
 
-game();
