@@ -7,8 +7,11 @@ let globalResult = 0;
 let globalHumanResult = 0;
 let globalComputerResult = 0;
 
+let humanScoreBarElement = document.querySelector(".human-score-bar");
+let computerScoreBarElement = document.querySelector(".computer-score-bar");
 let humanScoreElement = document.querySelector(".human-score");
 let computerScoreElement = document.querySelector(".computer-score");
+let roundElement = document.querySelector(".round");
 
 // Helper Functions
 // Generate random computer choice
@@ -46,16 +49,20 @@ function resetToDefault() {
   globalHumanResult = 0;
   globalComputerResult = 0;
 
-  humanScoreElement.style.flexGrow = "1";
-  computerScoreElement.style.flexGrow = "1";
+  humanScoreBarElement.style.flexGrow = "1";
+  computerScoreBarElement.style.flexGrow = "1";
+  roundElement.firstElementChild.textContent = `ROUND ${1}`;
 }
 
-// Update the score bar display according to the current result
-function updateScoreDisplay() {
-  humanScoreElement.style.flexGrow = `${globalHumanResult}`;
-  computerScoreElement.style.flexGrow = `${globalComputerResult}`;
-  humanScoreElement.querySelector('p').textContent = `YOU: ${globalHumanResult}`;
-  computerScoreElement.querySelector('p').textContent = `COMPUTER: ${globalComputerResult}`;
+// Update the round count and score bar display according to the current result
+function updateGameData() {
+  if (globalHumanResult || globalComputerResult) {
+    humanScoreBarElement.style.flexGrow = `${globalHumanResult}`;
+    computerScoreBarElement.style.flexGrow = `${globalComputerResult}`;
+  }
+  humanScoreElement.textContent = `YOU: ${globalHumanResult}`;
+  computerScoreElement.textContent = `COMPUTER: ${globalComputerResult}`;
+  roundElement.firstElementChild.textContent = `ROUND ${numberOfRounds}`;
 }
 
 // Click event listener and game logic
@@ -78,11 +85,14 @@ playCardsElement.addEventListener("click", (event) => {
   alert(
     `You chose ${humanChoice}, Computer chose ${computerChoice}, Result: ${roundResult}`
   );
+
+  
   // Show the result of the game (5 rounds)
   if (numberOfRounds == 5) {
     alert(`Global Result : ${globalResult}`);
     resetToDefault();
   }
 
-  updateScoreDisplay();
+  updateGameData();
+
 });

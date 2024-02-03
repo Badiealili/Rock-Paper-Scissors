@@ -1,5 +1,6 @@
-/* JOSH COMEAU CSS RESET. SOURCE: https://www.joshwcomeau.com/css/custom-css-reset/ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Martian+Mono:wght@100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/* JOSH COMEAU CSS RESET. SOURCE: https://www.joshwcomeau.com/css/custom-css-reset/ */
 *,
 *::before,
 *::after {
@@ -53,7 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: monospace;
+  font-family: "Martian Mono", monospace;
   color: azure;
   background-color: black;
 }
@@ -79,6 +80,7 @@ body {
   cursor: pointer;
   color: black;
   background-color: white;
+  border-radius: .5em;
   height: 150px;
   width: 150px;
   display: flex;
@@ -88,36 +90,48 @@ body {
 
 .score {
   position: relative;
-  height: 30px;
+  height: 20px;
+}
+
+.score .score-bars {
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  border: white 2px solid;
+  border-radius: 9999px;
+  overflow: hidden;
 }
 
 .score p {
   position: absolute;
 }
 
-.score .human-score p {
+.score .human-score{
   left: 0;
-  transform: translateX(-100%);
+  top: 0;
+  transform: translateX(-120%);
 }
 
-.score .computer-score p {
+.score .computer-score{
   right: 0;
-  transform: translateX(100%);
+  top: 0;
+  transform: translateX(120%);
 }
 
-.score .human-score {
+.score .score-bars .human-score-bar {
   background-color: blue;
   flex: 1 1 0;
+  transition: flex-grow .2s ease-in-out;
 }
 
-.score .computer-score {
+.score .score-bars .computer-score-bar {
   background-color: red;
-  flex: 1 1 0;
+  flex: 1 1 0;  
+  transition: flex-grow .2s ease-in-out;
 }
 
 footer {
   text-align: center;
   padding-block: 1em;
 }
+
