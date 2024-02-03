@@ -50,7 +50,7 @@ h6 {
 
 body {
   height: 100vh;
-  padding-inline: 15em;
+  padding-inline: 25em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,33 +59,33 @@ body {
   background-color: black;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding-block: 3em;
-}
-
-.main {
-  padding-inline: 10em;
+header {
+  margin-top: 2em;
+  text-align: center;
 }
 
 .play-cards {
   display: flex;
   justify-content: space-between;
-  margin-top: -3em;
   margin-bottom: 5em;
 }
 
 .play-cards .play-card {
   cursor: pointer;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: transparent;
+  border: white 2px solid;
   border-radius: .5em;
   height: 150px;
   width: 150px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.emoji {
+  font-size: 32px;
 }
 
 .score {
@@ -119,7 +119,7 @@ body {
 }
 
 .score .score-bars .human-score-bar {
-  background-color: blue;
+  background-color: green;
   flex: 1 1 0;
   transition: flex-grow .2s ease-in-out;
 }
@@ -128,6 +128,14 @@ body {
   background-color: red;
   flex: 1 1 0;  
   transition: flex-grow .2s ease-in-out;
+}
+
+.players-choices {
+  text-align: center;
+  margin-bottom: 1em;
+  padding: 1em;
+  border: white 2px solid;
+  border-radius: 1em;
 }
 
 footer {

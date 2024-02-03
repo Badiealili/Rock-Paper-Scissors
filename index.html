@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <div class="header">
-        <div class="logo"><img src="#" alt="logo"></div>
-        <div class="round">
-            <p>Round 1</p>
+  </head>
+  <body>
+    <header>
+      <h1>ROCK PAPER SCISSORS</h1>
+      <p>CHOOSE YOUR WEAPON</p>
+    </header>
+    <main>
+      <div class="play-cards">
+        <button class="play-card" data-value="rock">
+          <p class="emoji">&#129704;</p>
+          Rock
+        </button>
+        <button class="play-card" data-value="paper">
+          <p class="emoji">&#128195;</p>
+          Paper
+        </button>
+        <button class="play-card" data-value="scissors">
+          <p class="emoji">&#9986;&#65039;</p>
+          Scissors
+        </button>
+      </div>
+      <div class="dialogue-box">
+        <p class="players-choices">
+          <span class="computer-choice">COMPUTER CHOSE: ?</span>
+          <span class="human-choice">YOU CHOSE: ?</span>
+        </p>
+      </div>
+      <div class="score">
+        <p class="human-score">YOU: 0</p>
+        <div class="score-bars">
+          <div class="human-score-bar"></div>
+          <div class="computer-score-bar"></div>
         </div>
-    </div>
-    <div class="main">
-        <div class="play-cards">
-            <button class="play-card" data-value="rock">&#129704;<br>Rock</button>
-            <button class="play-card" data-value="paper">&#128195;<br>Paper</button>
-            <button class="play-card" data-value="scissors">&#9986;&#65039;<br>Scissors</button>
-        </div>
-        <div class="score">
-            <p class="human-score">YOU: 0</p>
-            <div class="score-bars">
-                <div class="human-score-bar"></div>
-                <div class="computer-score-bar"></div>
-            </div>
-            <p class="computer-score">COMPUTER: 0</p>
-        </div>
-    </div>
+        <p class="computer-score">COMPUTER: 0</p>
+      </div>
+    </main>
     <footer>Created by Badie Alili. All rights reserved &copy;</footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
