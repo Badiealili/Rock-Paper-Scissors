@@ -68,6 +68,10 @@ header h1 {
   font-weight: 900;
 }
 
+header p {
+  color: #222;
+}
+
 main {
   width: min(32em, 90%);
 }
@@ -192,14 +196,6 @@ main {
   transition: flex-grow 0.2s ease-in-out;
 }
 
-.players-choices {
-  text-align: center;
-  margin-bottom: 1em;
-  padding: 1em;
-  border: #5386e4 2px solid;
-  border-radius: 1em;
-}
-
 .result {
   display: none;
   position: absolute;
@@ -211,8 +207,6 @@ main {
   border-radius: 1em;
   padding: 2em 8em;
   z-index: 2;
-  opacity: 0;
-  transition: opacity 2s ease-in;
 }
 
 .result .result-text {
@@ -236,10 +230,9 @@ main {
 .overlay {
   display: none;
   position: absolute;
-  inset: 100%;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1;
-  transition: inset 2s ease-in;
 }
 
 footer {

@@ -74,8 +74,6 @@ function displayResult(gameWon) {
   resultElement.querySelector(".result-text").innerHTML = resultText;
   overlayElement.style.display = "block";
   resultElement.style.display = "block";
-  overlayElement.style.inset = "0";
-  resultElement.style.opacity = "1";
 }
 
 // Reset the page including styles and global variables
@@ -115,13 +113,13 @@ playCardsElement.addEventListener("click", (event) => {
   // Show the result of the game (First to 5)
   if (globalComputerResult == 5 || globalHumanResult == 5) {
     displayResult(globalResult > 0);
-    resetToDefault();
   }
 });
 
 // Click event listener to replay another game
 let replayButtonElement = resultElement.querySelector(".replay-btn");
 replayButtonElement.addEventListener("click", () => {
+  resetToDefault();
   overlayElement.style.display = "none";
   resultElement.style.display = "none";
 });
