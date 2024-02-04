@@ -8,38 +8,47 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <div class="overlay"></div>
     <header>
       <h1>ROCK PAPER SCISSORS</h1>
       <p>CHOOSE YOUR WEAPON</p>
     </header>
     <main>
+      <div class="result">
+        <p class="result-text">YOU WON!</p>
+        <button class="replay-btn">REPLAY</button>
+      </div>
       <div class="play-cards">
         <button class="play-card" data-value="rock">
           <p class="emoji">&#129704;</p>
-          Rock
+          ROCK
         </button>
         <button class="play-card" data-value="paper">
           <p class="emoji">&#128195;</p>
-          Paper
+          PAPER
         </button>
         <button class="play-card" data-value="scissors">
           <p class="emoji">&#9986;&#65039;</p>
-          Scissors
+          SCISSORS
         </button>
       </div>
-      <div class="dialogue-box">
+      <!-- <div class="dialogue-box">
         <p class="players-choices">
           <span class="computer-choice">COMPUTER CHOSE: ?</span>
           <span class="human-choice">YOU CHOSE: ?</span>
         </p>
-      </div>
+      </div> -->
       <div class="score">
-        <p class="human-score">YOU: 0</p>
+        <p class="human-score">0</p>
+        <p class="human-choice"></p>
+        <p class="human-avatar">&#128102;&#127995;</p>
         <div class="score-bars">
           <div class="human-score-bar"></div>
           <div class="computer-score-bar"></div>
         </div>
-        <p class="computer-score">COMPUTER: 0</p>
+        <p class="computer-choice"></p>
+        <p class="computer-score">0</p>
+        <p class="computer-avatar">&#129302;</p>
       </div>
     </main>
     <footer>Created by Badie Alili. All rights reserved &copy;</footer>

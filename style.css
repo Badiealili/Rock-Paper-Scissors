@@ -50,13 +50,13 @@ h6 {
 
 body {
   height: 100vh;
-  padding-inline: 25em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: "Martian Mono", monospace;
-  color: azure;
-  background-color: black;
+  align-items: center;
+  font-family: "Inter", monospace;
+  color: #000000;
+  background-color: #e1e6e1;
 }
 
 header {
@@ -64,33 +64,64 @@ header {
   text-align: center;
 }
 
+header h1 {
+  font-weight: 900;
+}
+
+main {
+  width: min(32em, 90%);
+}
+
 .play-cards {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
   margin-bottom: 5em;
 }
 
 .play-cards .play-card {
   cursor: pointer;
-  color: white;
+  color: black;
+  font-weight: 500;
   background-color: transparent;
-  border: white 2px solid;
-  border-radius: .5em;
-  height: 150px;
-  width: 150px;
+  border-radius: 3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-self: center;
+}
+
+.play-cards .play-card:hover .emoji {
+  animation: 200ms ease-in infinite shake;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .emoji {
-  font-size: 32px;
+  font-size: 6em;
 }
 
 .score {
   position: relative;
-  height: 20px;
+  height: 50px;
 }
 
 .score .score-bars {
@@ -98,48 +129,120 @@ header {
   width: 100%;
   display: flex;
   border: white 2px solid;
-  border-radius: 9999px;
+  border-radius: 1em;
   overflow: hidden;
 }
 
 .score p {
   position: absolute;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: #e1e6e1;
 }
 
-.score .human-score{
+.score .human-score {
+  left: 0;
+  top: 50%;
+  transform: translate(120%, -50%);
+}
+
+.score .computer-score {
+  right: 0;
+  top: 50%;
+  transform: translate(-120%, -50%);
+}
+
+.score .human-avatar {
+  font-size: 3em;
+  left: 0;
+  top: 50%;
+  transform: translate(-120%, -50%);
+}
+
+.score .computer-avatar {
+  font-size: 3em;
+  right: 0;
+  top: 38%;
+  transform: translate(120%, -50%);
+}
+
+.score .human-choice {
+  color: black;
   left: 0;
   top: 0;
-  transform: translateX(-120%);
+  transform: translate(20%, -100%);
 }
 
-.score .computer-score{
+.score .computer-choice {
+  color: black;
   right: 0;
   top: 0;
-  transform: translateX(120%);
+  transform: translate(-20%, -100%);
 }
 
 .score .score-bars .human-score-bar {
-  background-color: green;
+  background-color: #5386e4;
   flex: 1 1 0;
-  transition: flex-grow .2s ease-in-out;
+  transition: flex-grow 0.2s ease-in-out;
 }
 
 .score .score-bars .computer-score-bar {
-  background-color: red;
-  flex: 1 1 0;  
-  transition: flex-grow .2s ease-in-out;
+  background-color: #f26419;
+  flex: 1 1 0;
+  transition: flex-grow 0.2s ease-in-out;
 }
 
 .players-choices {
   text-align: center;
   margin-bottom: 1em;
   padding: 1em;
-  border: white 2px solid;
+  border: #5386e4 2px solid;
   border-radius: 1em;
+}
+
+.result {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  background-color: white;
+  color: black;
+  border-radius: 1em;
+  padding: 2em 8em;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.result .result-text {
+  font-size: 32px;
+  font-weight: 800;
+  white-space: nowrap;
+  margin-bottom: 1em;
+}
+
+.result .replay-btn {
+  cursor: pointer;
+  display: block;
+  background-color: #5386e4;
+  color: white;
+  margin-inline: auto;
+  padding-block: 1em;
+  width: 6em;
+  border-radius: 1em;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  inset: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  transition: inset 2s ease-in;
 }
 
 footer {
   text-align: center;
   padding-block: 1em;
 }
-
